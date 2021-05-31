@@ -9,6 +9,11 @@
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.5.3</version>
+        </dependency>
+        <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>6.9.1</version>
@@ -35,14 +40,7 @@
     </dependencies>
     <build>
         <plugins>
-                 <plugin>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.7.0</version>
-    <configuration>
-        <fork>true</fork>
-        <executable>/usr/lib/jvm/openjdk-11-jdk-headless/bin/java</executable>
-    </configuration>
-</plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
@@ -91,6 +89,7 @@
                         <configuration>
                             <projectName>${name}</projectName>
                             <outputDirectory>${project.build.directory}</outputDirectory>
+                            <inputDirectory>${project.build.directory}/cucumber-json</inputDirectory>
                             <jsonFiles>
                                 <!-- supports wildcard or name pattern -->
                                 <param>**/*.json</param>
