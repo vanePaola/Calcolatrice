@@ -22,7 +22,6 @@ public class StepDefinition {
     @Then("the result should be {int}")
     public void the_sum_should_be(Integer int1) {
         assertTrue(c.getResult() == int1);
-        throw new io.cucumber.java.PendingException();
     }
 
 
